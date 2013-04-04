@@ -84,7 +84,7 @@ void keyfunc(unsigned char key, int xscr, int yscr)
         keyDown[3] = 1;
 }
 
-void idol(void)
+void idle(void)
 {
     //printf("KEYS:  %d %d %d %d\n", keyDown[0], keyDown[1], keyDown[2], keyDown[3]);
     //printf("THETA: %f\n", theta);
@@ -93,7 +93,7 @@ void idol(void)
         theta -= 2*PI;
     if(theta < 0)
         theta += 2*PI;
-    double speed = 0.001;
+    double speed = 0.01;
     if(keyDown[0] + keyDown[1] + keyDown[2] + keyDown[3] >= 2)
         speed /= sqrt(2);
     if(keyDown[0])
@@ -149,7 +149,7 @@ int main (int argc, char **argv) {
     init ();
     glutReshapeFunc (reshape);
     glutDisplayFunc (display);
-    glutIdleFunc (idol);
+    glutIdleFunc (idle);
     glutKeyboardFunc(keyfunc);
     glutKeyboardUpFunc(keyupfunc);
     glutPassiveMotionFunc(motion);
