@@ -54,7 +54,7 @@ void look()
 {
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    gluLookAt(playerPos[0], playerPos[1], 1.0, playerPos[0] + cos(theta), playerPos[1] + sin(theta), 0.0, 0.0, 0.0, 1.0);
+    gluLookAt(playerPos[0], playerPos[1], 0.0, playerPos[0] + cos(theta), playerPos[1] + sin(theta), 0.0, 0.0, 0.0, 1.0);
 }
 
 void keyupfunc(unsigned char key, int xscr, int yscr)
